@@ -9,7 +9,7 @@
       font-family: Arial, sans-serif;
       background: linear-gradient(to bottom, #ffd1ff, #fad0c4);
       text-align: center;
-      overflow-y: auto;   /* ✅ Scroll enabled */
+      overflow-y: auto;
     }
 
     h1 {
@@ -47,9 +47,10 @@
       to { opacity: 1; }
     }
 
-    /* NEXT BUTTON */
-    .next-btn {
-      margin-top: 25px;
+    /* NEXT BUTTON (hidden initially) */
+    #nextBtn {
+      display: none;
+      margin-top: 30px;
       padding: 12px 25px;
       font-size: 16px;
       background: #ff4d6d;
@@ -61,7 +62,7 @@
       transition: 0.3s;
     }
 
-    .next-btn:hover {
+    #nextBtn:hover {
       background: #ff1e4d;
       transform: scale(1.05);
     }
@@ -74,42 +75,37 @@
 
 <div class="slideshow">
 
-  <!-- Slide 1 -->
   <div class="slide">
     <img src="photo1.jpeg">
     <div class="caption">You are my happiest beginning 💖</div>
   </div>
 
-  <!-- Slide 2 -->
   <div class="slide">
     <img src="photo2.jpeg">
     <div class="caption">Every moment with you is magic ✨</div>
   </div>
 
-  <!-- Slide 3 -->
   <div class="slide">
     <img src="photo3.jpeg">
     <div class="caption">You are my safe place 🤍</div>
   </div>
 
-  <!-- Slide 4 -->
   <div class="slide">
     <img src="photo4.jpeg">
     <div class="caption">My favorite memories are with you 📸</div>
   </div>
 
-  <!-- Slide 5 (FINAL) -->
   <div class="slide">
     <img src="photo5.jpeg">
     <div class="caption">Forever starts with you ❤️</div>
-
-    <!-- NEXT BUTTON -->
-    <button class="next-btn" onclick="goNext()">
-      Next ➜
-    </button>
   </div>
 
 </div>
+
+<!-- NEXT BUTTON OUTSIDE SLIDES -->
+<button id="nextBtn" onclick="goNext()">
+  Next ➜
+</button>
 
 <script>
 let slideIndex = 0;
@@ -125,9 +121,11 @@ function showSlides() {
     slides[slideIndex - 1].style.display = "flex";
   }
 
-  /* Stop slideshow at last slide */
+  /* If last slide → stop + show button */
   if (slideIndex < slides.length) {
     setTimeout(showSlides, 3000);
+  } else {
+    document.getElementById("nextBtn").style.display = "inline-block";
   }
 }
 
