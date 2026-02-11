@@ -52,55 +52,42 @@
 
     /* Slide animation */
     @keyframes slideShow {
-      0% {
-        opacity: 0;
-        transform: translateY(100px);
-      }
-      20% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      80% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(-100px);
-      }
+      0% { opacity: 0; transform: translateY(100px); }
+      20% { opacity: 1; transform: translateY(0); }
+      80% { opacity: 1; }
+      100% { opacity: 0; transform: translateY(-100px); }
     }
 
-    /* LAST SLIDE — STAYS VISIBLE */
+    /* FINAL SLIDE — stays visible */
     .final-slide {
       animation: finalStay 5s forwards;
       animation-delay: 20s;
     }
 
     @keyframes finalStay {
-      0% {
-        opacity: 0;
-        transform: translateY(100px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(100px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Next Button */
+    /* NEXT BUTTON — FIXED CORNER */
     .next-btn {
-      margin-top: 25px;
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
       padding: 12px 25px;
       font-size: 16px;
       background: #ff4d6d;
       color: white;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
       transition: 0.3s;
     }
 
     .next-btn:hover {
       background: #ff1e4d;
+      transform: scale(1.05);
     }
   </style>
 </head>
