@@ -1,95 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Our Special Moments ❤️</title>
+  <title>Our Special Moments ❤️</title>
 
-<style>
-  body {
-    margin: 0;
-    height: 100vh;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #ffb6c1, #ffd1dc);
-    overflow: hidden;
-    text-align: center;
-  }
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #ffd1ff, #fad0c4);
+      overflow: hidden;
+      text-align: center;
+    }
 
-  h1 {
-    margin-top: 20px;
-    color: #ff4d6d;
-  }
+    h1 {
+      margin-top: 20px;
+      color: #ff4d6d;
+    }
 
-  .slideshow {
-    position: relative;
-    width: 100%;
-    height: 90vh;
-  }
+    .slideshow {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+    }
 
-  .slide {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    opacity: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    animation: slideShow 25s infinite;
-  }
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      animation: slideShow 5s forwards;
+    }
 
-  .slide img {
-    width: 320px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  }
+    .slide img {
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
 
-  .caption {
-    margin-top: 18px;
-    font-size: 20px;
-    color: #333;
-    background: rgba(255,255,255,0.7);
-    padding: 10px 20px;
-    border-radius: 10px;
-  }
+    .caption {
+      margin-top: 20px;
+      font-size: 22px;
+      color: #333;
+      background: rgba(255,255,255,0.7);
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
 
-  /* NEXT BUTTON */
-  .next-btn {
-    margin-top: 20px;
-    padding: 12px 30px;
-    font-size: 16px;
-    background: #ff4d6d;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    display: none;
-  }
+    /* Slide animation */
+    @keyframes slideShow {
+      0% {
+        opacity: 0;
+        transform: translateY(100px);
+      }
+      20% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-100px);
+      }
+    }
 
-  .next-btn:hover {
-    background: #ff1e4d;
-  }
+    /* Final slide stays visible */
+    .final-slide {
+      animation: finalSlide 5s forwards;
+      animation-delay: 20s;
+    }
 
-  /* Animation */
-  @keyframes slideShow {
-    0%   { opacity: 0; transform: translate(-50%, 80%); }
-    10%  { opacity: 1; transform: translate(-50%, -50%); }
-    20%  { opacity: 1; }
-    30%  { opacity: 0; transform: translate(-50%, -120%); }
-    100% { opacity: 0; }
-  }
+    @keyframes finalSlide {
+      0% {
+        opacity: 0;
+        transform: translateY(100px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-  /* Timing */
-  .slide:nth-child(1) { animation-delay: 0s; }
-  .slide:nth-child(2) { animation-delay: 5s; }
-  .slide:nth-child(3) { animation-delay: 10s; }
-  .slide:nth-child(4) { animation-delay: 15s; }
-  .slide:nth-child(5) { animation-delay: 20s; }
+    /* Next Button */
+    .next-btn {
+      margin-top: 25px;
+      padding: 12px 25px;
+      font-size: 16px;
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-  /* Show Next button only on last slide */
-  .slide:last-child .next-btn {
-    display: block;
-  }
-</style>
+    .next-btn:hover {
+      background: #ff1e4d;
+    }
+  </style>
 </head>
 
 <body>
@@ -99,39 +112,53 @@
 <div class="slideshow">
 
   <!-- Slide 1 -->
-  <div class="slide">
+  <div class="slide" style="animation-delay:0s;">
     <img src="photo1.jpeg">
-    <div class="caption">You are my happiest beginning 💖</div>
+    <div class="caption">
+      You are my happiest beginning 💖
+    </div>
   </div>
 
   <!-- Slide 2 -->
-  <div class="slide">
+  <div class="slide" style="animation-delay:5s;">
     <img src="photo2.jpeg">
-    <div class="caption">Every moment with you is magic ✨</div>
+    <div class="caption">
+      Every moment with you is magic ✨
+    </div>
   </div>
 
   <!-- Slide 3 -->
-  <div class="slide">
+  <div class="slide" style="animation-delay:10s;">
     <img src="photo3.jpeg">
-    <div class="caption">You are my safe place 🤍</div>
+    <div class="caption">
+      You are my safe place 🤍
+    </div>
   </div>
 
   <!-- Slide 4 -->
-  <div class="slide">
+  <div class="slide" style="animation-delay:15s;">
     <img src="photo4.jpeg">
-    <div class="caption">My favorite memories are with you 📸</div>
+    <div class="caption">
+      My favorite memories are with you 📸
+    </div>
   </div>
 
-  <!-- Slide 5 (LAST) -->
-  <div class="slide">
+  <!-- Slide 5 FINAL -->
+  <div class="slide final-slide">
+
     <img src="photo5.jpeg">
+
     <div class="caption">
-      Forever starts with you my baaaloooooottaaa 😄💗
+      Forever starts with you ❤️
     </div>
 
-    <button class="next-btn" onclick="goNext()">
+    <button
+      class="next-btn"
+      onclick="goNext()"
+    >
       Next ➜
     </button>
+
   </div>
 
 </div>
