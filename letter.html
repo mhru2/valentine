@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Love Letter ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to bottom, #ffb6c1, #ffd1dc);
+      font-family: 'Georgia', serif;
+      overflow: hidden;
+    }
+
+    .letter {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      width: 500px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      animation: slideUp 2s ease;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    /* Slide animation */
+    @keyframes slideUp {
+      from {
+        transform: translateY(200px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Falling hearts */
+    .heart {
+      position: absolute;
+      color: red;
+      font-size: 20px;
+      animation: fall 6s linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10vh);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="letter">
+
+  <h1>My Love Letter 💌</h1>
+
+  <p>
+    My love, you've been my everything since the day we met.  
+    Even after marriage, our love keeps growing stronger.  
+    You work hard for us every day,  
+    and I fall in love with you harder every single day. ❤️  
+    <br><br>
+    🫶🥰 Thanks for loving me endlessly.
+  </p>
+
+</div>
+
+<!-- Falling Hearts Script -->
+<script>
+for (let i = 0; i < 20; i++) {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration =
+    3 + Math.random() * 3 + "s";
+  document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html>

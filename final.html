@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Unlock My Surprise ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #ffb6c1, #ffd1dc);
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      width: 350px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    input {
+      padding: 12px;
+      width: 70%;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      margin-top: 15px;
+    }
+
+    button {
+      padding: 12px 20px;
+      margin-left: 10px;
+      border: none;
+      border-radius: 10px;
+      background: #ff4d6d;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ff1e4d;
+    }
+
+    .error {
+      color: red;
+      margin-top: 15px;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <h2>Hey handsome ❤️</h2>
+
+  <p>
+    Type <b>i love you mehru</b><br>
+    to unlock my surprise Love Letter 💌
+  </p>
+
+  <input id="loveInput" placeholder="Type here...">
+  <button onclick="checkLove()">Submit 💕</button>
+
+  <div class="error" id="errorMsg">
+    😜 Nope! Type it properly baby!
+  </div>
+
+</div>
+
+<script>
+function checkLove() {
+
+  const text = document
+    .getElementById("loveInput")
+    .value
+    .toLowerCase()
+    .trim();
+
+  if (text === "i love you mehru") {
+    window.location.href = "letter.html";
+  } else {
+    document.getElementById("errorMsg").style.display = "block";
+  }
+}
+</script>
+
+</body>
+</html>
