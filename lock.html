@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love ❤️</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  }
+
+  .box {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    animation: fadeIn 1.5s ease;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  p {
+    color: #555;
+  }
+
+  input {
+    padding: 12px;
+    width: 80%;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-top: 15px;
+    font-size: 16px;
+    outline: none;
+  }
+
+  button {
+    margin-top: 15px;
+    padding: 12px 25px;
+    border: none;
+    background: #ff4d6d;
+    color: white;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: #e63950;
+  }
+
+  .error {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  /* Floating hearts */
+  .heart {
+    position: absolute;
+    color: red;
+    animation: float 6s linear infinite;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(100vh);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10vh);
+      opacity: 0;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {opacity:0; transform: translateY(40px);}
+    to {opacity:1; transform: translateY(0);}
+  }
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+  <h2>Hey Handsome ❤️</h2>
+
+  <p>
+    Type <b>i love you mehru</b><br>
+    to unlock my surprise 💌
+  </p>
+
+<input
+id="password"
+placeholder="Type here..."
+
+>
+
+  <br>
+
+  <button onclick="checkPassword()">
+    Unlock 💖
+  </button>
+
+  <div class="error" id="errorMsg"></div>
+</div>
+
+<!-- Background Music -->
+
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+/* PASSWORD CHECK */
+function checkPassword() {
+
+  const value =
+    document
+      .getElementById("password")
+      .value
+      .toLowerCase()
+      .trim();
+
+  if (value === "i love you mehru") {
+
+    window.location.href = "index.html";
+
+  } else {
+
+    document
+      .getElementById("errorMsg")
+      .innerText =
+      "😜 Nope! Type it properly baby!";
+
+  }
+}
+
+/* FLOATING HEARTS */
+for (let i = 0; i < 30; i++) {
+
+  const heart = document.createElement("div");
+
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+
+  heart.style.left =
+    Math.random() * 100 + "vw";
+
+  heart.style.fontSize =
+    Math.random() * 20 + 10 + "px";
+
+  heart.style.animationDuration =
+    3 + Math.random() * 3 + "s";
+
+  document.body.appendChild(heart);
+}
+
+</script>
+
+</body>
+</html>
