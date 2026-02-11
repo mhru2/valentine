@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Our Special Moments ❤️</title>
 
   <style>
@@ -15,6 +16,7 @@
     h1 {
       margin-top: 20px;
       color: #ff4d6d;
+      font-size: 36px;
     }
 
     .slideshow {
@@ -45,18 +47,31 @@
       margin-top: 20px;
       font-size: 22px;
       color: #333;
-      background: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.75);
       padding: 10px 20px;
-      border-radius: 10px;
+      border-radius: 12px;
     }
 
-    /* Animation */
+    /* Upward Slideshow Animation */
     @keyframes slideShow {
-      0% { opacity: 0; transform: translateY(100px); }
-      10% { opacity: 1; transform: translateY(0); }
-      20% { opacity: 1; }
-      30% { opacity: 0; transform: translateY(-100px); }
-      100% { opacity: 0; }
+      0% {
+        opacity: 0;
+        transform: translateY(120px);
+      }
+      10% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      20% {
+        opacity: 1;
+      }
+      30% {
+        opacity: 0;
+        transform: translateY(-120px);
+      }
+      100% {
+        opacity: 0;
+      }
     }
 
     /* Delay each slide */
@@ -77,32 +92,42 @@
 
   <!-- Photo 1 -->
   <div class="slide">
-    <img src="photo1.jpg">
-    <div class="caption">You are my happiest beginning 💖</div>
+    <img src="photo1.jpeg">
+    <div class="caption">
+      You are my happiest beginning 💖
+    </div>
   </div>
 
   <!-- Photo 2 -->
   <div class="slide">
-    <img src="photo2.jpg">
-    <div class="caption">Every moment with you is magic ✨</div>
+    <img src="photo2.jpeg">
+    <div class="caption">
+      Every moment with you is magic ✨
+    </div>
   </div>
 
   <!-- Photo 3 -->
   <div class="slide">
-    <img src="photo3.jpg">
-    <div class="caption">You are my safe place 🤍</div>
+    <img src="photo3.jpeg">
+    <div class="caption">
+      You are my safe place 🤍
+    </div>
   </div>
 
   <!-- Photo 4 -->
   <div class="slide">
-    <img src="photo4.jpg">
-    <div class="caption">My favorite memories are with you 📸</div>
+    <img src="photo4.jpeg">
+    <div class="caption">
+      My favorite memories are with you 📸
+    </div>
   </div>
 
-  <!-- Photo 5 (Final Special) -->
+  <!-- Photo 5 (Final Special Photo) -->
   <div class="slide">
-    <img src="photo5.jpg">
-    <div class="caption">Forever starts with you ❤️</div>
+    <img src="photo5.jpeg">
+    <div class="caption">
+      Forever starts with you ❤️
+    </div>
   </div>
 
 </div>
