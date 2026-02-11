@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Yay ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #ff9a9e, #fecfef);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      color: #ff4d6d;
+    }
+
+    p {
+      font-size: 20px;
+      color: #444;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+  <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" width="120">
+
+  <h1>Yaaahhh! Be my forever Valentine! 💖</h1>
+
+  <p>I want to show you some special moments of us ❤️</p>
+
+  <button onclick="openMemories()">See the moments</button>
+</div>
+
+<canvas id="confetti"></canvas>
+
+<script>
+function openMemories() {
+  window.location.href = "memories.html";
+}
+
+/* Simple Confetti */
+const canvas = document.getElementById("confetti");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let pieces = [];
+
+for (let i = 0; i < 150; i++) {
+  pieces.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 6 + 2,
+    d: Math.random() * 50
+  });
+}
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "pink";
+
+  pieces.forEach(p => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fill();
+  });
+
+  update();
+}
+
+function update() {
+  pieces.forEach(p => {
+    p.y += 2;
+    if (p.y > canvas.height) p.y = 0;
+  });
+}
+
+setInterval(draw, 30);
+</script>
+
+</body>
+</html>

@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Be My Valentine ❤️</title>
+
   <style>
     body {
-      text-align: center;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      margin: 0;
+      padding: 0;
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #ff9a9e, #fecfef);
+      overflow: hidden;
     }
 
     .card {
@@ -18,10 +22,19 @@
       padding: 40px;
       border-radius: 20px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 350px;
+      position: relative;
     }
 
     h1 {
       color: #ff4d6d;
+      margin-bottom: 20px;
+    }
+
+    img {
+      width: 120px;
+      margin-bottom: 20px;
     }
 
     button {
@@ -31,6 +44,7 @@
       border-radius: 10px;
       margin: 10px;
       cursor: pointer;
+      transition: 0.3s;
     }
 
     #yes {
@@ -38,10 +52,19 @@
       color: white;
     }
 
+    #yes:hover {
+      background: #ff1e4d;
+    }
+
     #no {
       background: gray;
       color: white;
       position: absolute;
+    }
+
+    p {
+      font-size: 14px;
+      color: #777;
     }
   </style>
 </head>
@@ -49,27 +72,41 @@
 <body>
 
 <div class="card">
-  <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" width="120">
-  
-  <h1>Will you be my Valentine? 💖</h1>
 
-  <button id="yes" onclick="yesClicked()">Yes 💕</button>
+  <!-- Cute Couple Image -->
+  <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png">
+
+  <!-- Proposal Text -->
+  <h1>
+    Will you be my Valentine? 💖
+  </h1>
+
+  <!-- Buttons -->
+  <button id="yes" onclick="openYesPage()">Yes 💕</button>
   <button id="no" onmouseover="moveNo()">No 😢</button>
+
+  <p>Don’t waste your time clicking No 😄</p>
+
 </div>
 
 <script>
-function yesClicked() {
-  alert("Yayyyy!!! ❤️ I love you sooo much 🥰");
+
+/* YES → Go to celebration page */
+function openYesPage() {
+  window.location.href = "yes.html";
 }
 
+/* NO → Run away button */
 function moveNo() {
   const noBtn = document.getElementById("no");
-  const x = Math.random() * window.innerWidth;
-  const y = Math.random() * window.innerHeight;
+
+  const x = Math.random() * (window.innerWidth - 100);
+  const y = Math.random() * (window.innerHeight - 50);
 
   noBtn.style.left = x + "px";
   noBtn.style.top = y + "px";
 }
+
 </script>
 
 </body>
