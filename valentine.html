@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Be My Valentine ❤️</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      color: #ff4d6d;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    #yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    #no {
+      background: gray;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+  <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" width="120">
+  
+  <h1>Will you be my Valentine? 💖</h1>
+
+  <button id="yes" onclick="yesClicked()">Yes 💕</button>
+  <button id="no" onmouseover="moveNo()">No 😢</button>
+</div>
+
+<script>
+function yesClicked() {
+  alert("Yayyyy!!! ❤️ I love you sooo much 🥰");
+}
+
+function moveNo() {
+  const noBtn = document.getElementById("no");
+  const x = Math.random() * window.innerWidth;
+  const y = Math.random() * window.innerHeight;
+
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+}
+</script>
+
+</body>
+</html>
