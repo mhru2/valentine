@@ -69,13 +69,13 @@
       }
     }
 
-    /* Final slide stays visible */
+    /* LAST SLIDE — STAYS VISIBLE */
     .final-slide {
-      animation: finalSlide 5s forwards;
+      animation: finalStay 5s forwards;
       animation-delay: 20s;
     }
 
-    @keyframes finalSlide {
+    @keyframes finalStay {
       0% {
         opacity: 0;
         transform: translateY(100px);
@@ -114,36 +114,28 @@
   <!-- Slide 1 -->
   <div class="slide" style="animation-delay:0s;">
     <img src="photo1.jpeg">
-    <div class="caption">
-      You are my happiest beginning 💖
-    </div>
+    <div class="caption">You are my happiest beginning 💖</div>
   </div>
 
   <!-- Slide 2 -->
   <div class="slide" style="animation-delay:5s;">
     <img src="photo2.jpeg">
-    <div class="caption">
-      Every moment with you is magic ✨
-    </div>
+    <div class="caption">Every moment with you is magic ✨</div>
   </div>
 
   <!-- Slide 3 -->
   <div class="slide" style="animation-delay:10s;">
     <img src="photo3.jpeg">
-    <div class="caption">
-      You are my safe place 🤍
-    </div>
+    <div class="caption">You are my safe place 🤍</div>
   </div>
 
   <!-- Slide 4 -->
   <div class="slide" style="animation-delay:15s;">
     <img src="photo4.jpeg">
-    <div class="caption">
-      My favorite memories are with you 📸
-    </div>
+    <div class="caption">My favorite memories are with you 📸</div>
   </div>
 
-  <!-- Slide 5 FINAL -->
+  <!-- FINAL SLIDE -->
   <div class="slide final-slide">
 
     <img src="photo5.jpeg">
@@ -152,10 +144,7 @@
       Forever starts with you ❤️
     </div>
 
-    <button
-      class="next-btn"
-      onclick="goNext()"
-    >
+    <button class="next-btn" onclick="goNext()">
       Next ➜
     </button>
 
